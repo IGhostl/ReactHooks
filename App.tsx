@@ -1,10 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function App() {
   const [name, setName] = useState("Lucas")
   const [number, setNumber] = useState(1)
+
+  useEffect(() => {
+    console.log("Roda a cada renderização")
+  })
+
+  useEffect(() =>{
+    console.log("Somei um")
+  }, [number])
 
   const changeNumber = () => {
     //setNumber( number + 1 )
